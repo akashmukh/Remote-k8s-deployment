@@ -17,8 +17,8 @@ pipeline {
         steps {
             //script {
              withCredentials([usernamePassword(credentialsId: 'akashID', passwordVariable: 'pass', usernameVariable: 'user')]) {
-             remote.user = akash    
-             remote.password = akash
+             remote.user = user  
+             remote.password = pass
              sshPut remote: remote, from: "deploy.yml", into: "."
              sshCommand remote: remote, command: "kubectl apply -f deploy.yml"
             // }
