@@ -5,7 +5,8 @@ remote.port = 22
 remote.allowAnyHosts = true
 
 pipeline {
-    agent any
+    //agent any
+    node {
      stages {
         stage('Git Clone') {
             steps {
@@ -27,3 +28,4 @@ pipeline {
         }
       }
     }
+  }
