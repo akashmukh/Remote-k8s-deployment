@@ -19,7 +19,7 @@ pipeline {
              withCredentials([usernamePassword(credentialsId: 'akashID', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user  
              remote.password = pass
-             sshPut remote: remote, from: "deploy.yml", into: "."
+             sshPut remote: remote, from: "deploy.yml", into: "/home/akash"
              sshCommand remote: remote, command: "kubectl apply -f deploy.yml"
             }
            }
